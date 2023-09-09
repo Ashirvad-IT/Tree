@@ -1,0 +1,11 @@
+public static int getHeight(Node root) {
+		if(root==null) {
+			return 0;
+		}
+		else {
+			int leftHeight=getHeight(root.left);
+			int rightHeight=getHeight(root.right);
+			return Math.max(leftHeight, rightHeight)+1;
+		}
+		
+}

@@ -1,0 +1,48 @@
+Pre order Traversal:
+
+public static void preOrderTraversal(Node root) {
+		if(root==null) {
+			return;
+		}
+		System.out.println(root.data);
+		preOrderTraversal(root.left);
+		preOrderTraversal(root.right);
+}
+
+Post-order Traversal:
+
+public static void postOrderTraversal(Node root) {
+		if(root==null) {
+			return;
+		}
+		postOrderTraversal(root.left);
+		postOrderTraversal(root.right);
+		System.out.println(root.data);
+}
+
+In-order Traversal:
+
+public static void inOrderTraversal(Node root) {
+		if(root==null) {
+			return;
+		}
+		inOrderTraversal(root.left);
+		System.out.println(root.data);
+		inOrderTraversal(root.right);
+}
+
+Level order Traversal:
+
+public static void levelOrderTraversal(Node root) {
+		Queue<Node> que= new LinkedList();
+		que.add(root);
+		while(que.size()!=0) {
+			Node temp=que.poll();
+			System.out.println(temp.data);
+			if(temp.left!=null)
+			que.add(temp.left);
+			if(temp.right!=null)
+			que.add(temp.right);
+		}
+		
+}
